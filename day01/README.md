@@ -1,1 +1,11 @@
-# day 01
+## Create Maven project
+
+``` 
+mvn archetype:generate -DgroupId=com.rama.app -DartifactId=first-java-project -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+```
+
+## Build Maven application
+
+``` 
+mvn clean install
+```

@@ -1,0 +1,15 @@
+1) Create maven project second-java-app
+2) Build the project
+3) Verify the log
+4) run it locally
+5) Implement following method in Greeting class
+
+sayWelcome(){ return "welcome from greeting"}
+
+saHello(){ return "hello from greeting"}
+
+sayBye(){ return "bye from greeting"}
+
+Verify with main methid
+
+6) Write the unit test all above three method
