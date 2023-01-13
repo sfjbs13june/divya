@@ -1,4 +1,4 @@
-package com.rama.app;
+package com.divya.app;
 
 /**
  * Hello world!
