@@ -9,3 +9,4 @@ mvn archetype:generate -DgroupId=com.rama.app -DartifactId=first-java-project -D
 ``` 
 mvn clean install
 ```
+## day01 second-java-app application
