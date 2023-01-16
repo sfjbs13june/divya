@@ -20,7 +20,7 @@ public class HelloControllerIntegrationTest {
     private MockMvc mockMvc;
 
     @Test
-    public void testHelloControllerHello() throws Exception {
+    public void testHelloControllerSayHello() throws Exception {
         ResultActions responseEntity  = mockMvc.perform(get("/hello"));
         responseEntity.andExpect(status().isOk());
         String result = responseEntity.andReturn().getResponse().getContentAsString();

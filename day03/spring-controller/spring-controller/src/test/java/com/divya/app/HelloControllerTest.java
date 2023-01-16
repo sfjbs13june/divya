@@ -9,7 +9,7 @@ public class HelloControllerTest {
     @Test
     public void testSayHello()
     {
-        String expectedResult="hello from app";
+        String expectedResult="Hello from App";
         String result=helloController.SayHello();
         Assert.assertEquals(expectedResult,result);
     }
