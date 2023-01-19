@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.divya.app</groupId>
-	<artifactId>spring-controller2</artifactId>
+	<artifactId>spring-controller2-project</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>spring-controller</name>
 	<description>Demo project for Spring Boot</description>
