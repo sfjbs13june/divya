@@ -1,4 +1,4 @@
-package com.kamran.app.producer;
+package com.divya.app.producer;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
