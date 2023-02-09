@@ -1,0 +1,21 @@
+version: '3'
+services:
+  mongo-app:
+    image: div1708/hospital-management-system:0.0.1-SNAPSHOT
+    ports:
+      - "8083:8083"
+    environment:
+      spring.data.mongodb.url: mongodb://mongo:27017/data
+    depends_on:
+      - mongo
+    networks:
+      - my-network
+  mongo:
+    image: mongo:3.4.7
+    ports:
+      - "27014:27014"
+    networks:
+      - my-network
+networks:
+  my-network:
+    driver: bridge
