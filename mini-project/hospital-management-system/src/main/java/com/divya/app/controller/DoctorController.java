@@ -14,17 +14,17 @@ import java.util.List;
 @RequestMapping(value = "/doctor")
 public class DoctorController {
     @Autowired
-    AppointmentRepository appointmentRepos;
+    AppointmentRepository appointmentRepository;
 
     @RequestMapping(value = "doctor-appointment", method = RequestMethod.GET)
     public List<Appointment> getAppointments(@RequestParam String doctorName) {
 
-        return appointmentRepos.findBydoctorName(doctorName);
+        return appointmentRepository.findByDoctorName(doctorName);
     }
 
     @RequestMapping(value = "/save", method = RequestMethod.POST)
     public Appointment saveAppointment(@RequestBody Appointment appointment) {
-        appointment = appointmentRepos.save(appointment);
+        appointment = appointmentRepository.save(appointment);
         return appointment;
     }
 }

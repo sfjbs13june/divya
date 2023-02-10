@@ -1,11 +1,15 @@
 package com.divya.app.model;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Appointment {
-    String appointmentId;
-    String patientName;
-    String doctorName;
-    String date;
-    Prescription prescription;
+    private String appointmentId;
+    private String patientName;
+    private String doctorName;
+    private String date;
+    private Prescription prescription;
+
     public Appointment(){
 
     }

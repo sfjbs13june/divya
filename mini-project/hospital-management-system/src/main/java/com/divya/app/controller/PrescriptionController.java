@@ -12,18 +12,18 @@ import java.util.List;
 public class PrescriptionController {
 
     @Autowired
-    static
-    PrescriptionRepository prescriptionRepos;
-    @RequestMapping(value = "/view-prescription",method = RequestMethod.GET)
-    public List<Prescription> getAllPrescriptions(String patientName)
-    {
-       return PrescriptionRepository.findByPatientName(patientName);
+    PrescriptionRepository prescriptionRepository;
+
+    @GetMapping("/viewprescription")
+    public List<Prescription> getAllPrescriptions(@RequestParam String patientName){
+        return prescriptionRepository.findAllByPatientName(patientName);
     }
 
-    @RequestMapping(value = "/save-prescription",method = RequestMethod.POST)
-    public static Prescription savePrescription(@RequestBody Prescription prescription){
-        prescription = prescriptionRepos.save(prescription);
+    @PostMapping("/saveprescription")
+    public Prescription savePrescription(@RequestBody Prescription prescription){
+        prescription = prescriptionRepository.save(prescription);
         return prescription;
     }
+
 }
 

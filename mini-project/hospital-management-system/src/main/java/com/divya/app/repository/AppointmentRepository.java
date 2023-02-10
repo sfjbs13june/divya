@@ -8,10 +8,10 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface AppointmentRepository extends MongoRepository<Appointment,String>{
-    public Appointment save(Appointment appointment);
-    public List<Appointment> findBydoctorName(String doctorName);
-    public List<Appointment> findBypatientName(String patientName);
+public interface AppointmentRepository extends MongoRepository<Appointment, String> {
+    public  Appointment Save(Appointment appointment);
+    public  List<Appointment> findByDoctorName(String doctorName);
+   public List<Appointment> findByPatientName(String patientName);
 
 
 }

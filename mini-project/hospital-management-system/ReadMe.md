@@ -32,35 +32,76 @@ mvn spring-boot:run
 http://localhost:8080/swagger-ui/index.html
 
 swagger login and access
-ussername:doc123
-password:password
+ussername:doctor
+password:doctor
 ### doctor controller
 ## post
-
-curl -X 'POST' \
-'http://localhost:8080/doctor/save' \
--H 'accept: */*' \
--H 'Content-Type: application/json' \
--d '{
-"appointmentId": "1",
-"patientName": "jin",
-"doctorName": "kim",
+curl --location --request POST 'http://localhost:8080/doctor/save' \
+--header 'Authorization: Basic ZG9jdG9yOmRvY3Rvcg==' \
+--header 'Content-Type: application/json' \
+--header 'Cookie: JSESSIONID=0DFFF1C90BF17A74FA09BFE4ED17D59C' \
+--data-raw '{
+"appointmentId": "string",
+"patientName": "string",
+"doctorName": "string",
 "date": "string",
 "prescription": {
-"prescriptionId": "100",
-"appointmentId": "1",
-"description": "cold",
-"doctorName": "kim",
-"patientName": "jin"
+"prescriptionId": "string",
+"appointmentId": "string",
+"description": "string",
+"doctorName": "string",
+"patientName": "string"
 }
 }'
-request url:http://localhost:8080/doctor/save
 
 ## get
-curl -X 'GET' \
-'http://localhost:8080/doctor/doctor-appointment?doctorName=kim' \
--H 'accept: */*'
-request url:http://localhost:8080/doctor/doctor-appointment?doctorName=kim
+curl --location --request GET 'http://localhost:8080/doctor/doctor-appointment?doctorName=string' \
+--header 'Authorization: Basic ZG9jdG9yOmRvY3Rvcg==' \
+--header 'Content-Type: application/json' \
+--header 'Cookie: JSESSIONID=0DFFF1C90BF17A74FA09BFE4ED17D59C' \
+--data-raw '{
+"appointmentId": "string",
+"patientName": "string",
+"doctorName": "string",
+"date": "string",
+"prescription": {
+"prescriptionId": "string",
+"appointmentId": "string",
+"description": "string",
+"doctorName": "string",
+"patientName": "string"
+}
+}'
+username:patient
+password:patient
+
+### patientcontroller
+## post
+curl --location --request POST 'http://localhost:8080/patient/save' \
+--header 'Authorization: Basic cGF0aWVudDpwYXRpZW50' \
+--header 'Content-Type: application/json' \
+--header 'Cookie: JSESSIONID=0DFFF1C90BF17A74FA09BFE4ED17D59C' \
+--data-raw '
+{
+"appointmentId": "string",
+"patientName": "string",
+"doctorName": "string",
+"date": "string",
+"prescription": {
+"prescriptionId": "string",
+"appointmentId": "string",
+"description": "string",
+"doctorName": "string",
+"patientName": "string"
+}
+}'
+request url:http://localhost:8080/patient/save
+
+## get
+curl --location --request GET 'http://localhost:8080/patient/my-appointment?patientName=string' \
+--header 'Authorization: Basic cGF0aWVudDpwYXRpZW50' \
+--header 'Content-Type: application/json' \
+--header 'Cookie: JSESSIONID=0DFFF1C90BF17A74FA09BFE4ED17D59C' 
 ### prescription controller
 ## post
 curl -X 'POST' \
@@ -80,29 +121,3 @@ curl -X 'GET' \
 'http://localhost:8080/prescription/view-prescription?patientName=jin' \
 -H 'accept: */*'
 request url:http://localhost:8080/prescription/view-prescription?patientName=jin
-
-### patientcontroller
-## post
-curl -X 'POST' \
-'http://localhost:8080/patient/save' \
--H 'accept: */*' \
--H 'Content-Type: application/json' \
--d '{
-"appointmentId": "1",
-"doctorName": "kim",
-"date": "2-feb-2022",
-"prescription": {
-"prescriptionId": "122",
-"appointmentId": "1",
-"description": "corona",
-"doctorName": "kim",
-"patientName": "jin"
-}
-}'
-request url:http://localhost:8080/patient/save
-
-## get
-curl -X 'GET' \
-'http://localhost:8080/patient/my-appointment?patientName=jin' \
--H 'accept: */*'
-request url:http://localhost:8080/patient/my-appointment?patientName=jin
